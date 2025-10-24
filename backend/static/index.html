@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photogenic AI Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Photogenic AI Studio</h1>
+      <p>Generate 95% photorealistic portraits with custom inputs.</p>
+    </header>
+
+    <main>
+      <form id="studio-form">
+        <fieldset>
+          <legend>Reference</legend>
+          <label class="file">
+            <span>Reference image (optional)</span>
+            <input type="file" name="reference_image" accept="image/*" />
+          </label>
+        </fieldset>
+
+        <fieldset class="grid">
+          <label>
+            <span>Gender</span>
+            <select name="gender">
+              <option value="">None</option>
+              <option>female</option>
+              <option>male</option>
+              <option>non-binary</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Animal theme</span>
+            <select name="animal">
+              <option value="">None</option>
+              <option>cat</option>
+              <option>dog</option>
+              <option>wolf</option>
+              <option>tiger</option>
+              <option>lion</option>
+              <option>owl</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Expression</span>
+            <select name="expression">
+              <option value="">None</option>
+              <option>neutral</option>
+              <option>soft smile</option>
+              <option>serious</option>
+              <option>joyful</option>
+              <option>confident</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Pose</span>
+            <select name="pose">
+              <option value="">None</option>
+              <option>front-facing</option>
+              <option>three-quarter</option>
+              <option>profile</option>
+              <option>seated</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Outfit</span>
+            <select name="outfit">
+              <option value="">None</option>
+              <option>formal suit</option>
+              <option>casual</option>
+              <option>streetwear</option>
+              <option>business casual</option>
+              <option>traditional attire</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Lighting</span>
+            <select name="lighting">
+              <option value="">None</option>
+              <option>soft studio</option>
+              <option>golden hour</option>
+              <option>dramatic</option>
+              <option>daylight</option>
+              <option>Rembrandt lighting</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Camera</span>
+            <select name="camera">
+              <option value="">None</option>
+              <option>85mm portrait lens</option>
+              <option>50mm lens</option>
+              <option>35mm lens</option>
+              <option>telephoto compression</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Mood</span>
+            <select name="mood">
+              <option value="">None</option>
+              <option>cinematic</option>
+              <option>cheerful</option>
+              <option>dramatic</option>
+              <option>moody</option>
+              <option>elegant</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Background</span>
+            <select name="background">
+              <option value="">None</option>
+              <option>studio gray</option>
+              <option>city street</option>
+              <option>forest</option>
+              <option>beach</option>
+              <option>library</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Seed (optional)</span>
+            <input type="number" name="seed" placeholder="random" />
+          </label>
+        </fieldset>
+
+        <button id="submit" type="submit">Generate</button>
+      </form>
+
+      <section id="result" hidden>
+        <h2>Result</h2>
+        <div id="prompt"></div>
+        <img id="image" alt="Generated portrait" />
+        <div id="error" class="error" hidden></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Powered by Replicate · Demo app</small>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
